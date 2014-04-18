@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition
+	xmlns:coweb="http://java.sun.com/jsf/composite/pages/odontogram"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j" xmlns:p="http://primefaces.org/ui"
+	template="../template/template.xhtml">
+	<ui:define name="content">
+		<h:body>
+		<h:form>
+		<p:panel >
+
+			<p:panelGrid id="gridFormData" columns="2" columnClasses="columRight,collumLeft">
+				<p:outputLabel value="#{bundle['label.name']}" id="mandatoryName" />
+				<p:panelGrid columns="1">
+					<p:inputText id="inputName" label="#{bundle['label.name']}"
+						required="#{patientMB.mandatory}" size="35" maxlength="70" />
+	
+				</p:panelGrid>
+				<p:outputLabel value="#{bundle['label.birthday']}"
+					id="mandatoryBirthDate" />
+				<p:panelGrid columns="1">
+	<p:inputText id="iptName" label="#{bundle['label.name']}"
+								required="true" size="35" maxlength="70"
+								value="#{memberMB.member.name}" />
+	
+				</p:panelGrid>
+
+
+
+			</p:panelGrid>
+			
+			
+		
+			
+				
+</p:panel>
+</h:form>
+
+		</h:body>
+	</ui:define>
+</ui:composition>
+

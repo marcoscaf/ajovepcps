@@ -1,0 +1,112 @@
+body {
+	font-size: 10pt;
+}
+
+h3 {
+	font-size: 11pt;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.menu {
+	width: 190px;
+	position: absolute;
+}
+
+.content {
+	position: relative;
+	margin-left: 200px;
+}
+
+.navMenu {
+	max-width: 200px;
+}
+
+/*Membro*/
+.columRight {
+	padding-left: 5px;
+	text-align: right;
+}
+
+.collumLeft {
+	padding-left: 5px;
+	text-align: left;
+}
+
+.noBorder tr,.noBorder td,.noBorder table {
+	background-color: white !important;
+	border: none !important;
+	padding-left: 0px !important;
+	padding-right: 5px !important;
+}
+
+.noBorderEraser {
+	border: medium none;
+	height: 1px;
+	margin-left: -10px;
+	margin-top: -20px;
+	width: 1px;
+}
+
+.noBorderEraserSchedule {
+	border: medium none;
+	height: 1px;
+	margin-left: -20px;
+	margin-top: -20px;
+	margin-right: -9px;
+}
+
+.noBorder {
+	margin-left: 0px;
+}
+
+.clearField {
+	min-height: 20px !important;
+	min-width: 20px !important;
+	padding-right: 10px;
+	background: url('../resources/img/miniEraser.jpg') no-repeat;
+}
+
+.clearField:hover {
+	cursor: pointer;
+	background-color: black;
+	background: url('../resources/img/miniEraserOn.jpg') no-repeat;
+}
+
+.formPadding {
+	padding-right: 15px !important;
+}
+
+.insertMemberBtn {
+	margin-bottom: 5px;
+	margin-right:10px !important;
+	color: #0088CC;
+	font-weight: bold;
+}
+
+.dataTableIcons {
+	margin-left: 20px;
+	width: 15px;
+	heigth: 15px
+}
+
+.dataTableIcons:hover {
+	cursor: pointer;
+}
+
+/* Sobrescrição */
+.ui-widget {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 10pt;
+}
+
+.ui-widget-overlay {
+	background: none repeat scroll 0 0 #000000;
+	opacity: 0.4;
+}
+
+.ui-state-error {
+	background:none !important; 
+}

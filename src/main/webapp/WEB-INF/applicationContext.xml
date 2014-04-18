@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<!-- Intercepta toda a aplicação para que haja autenticação de User ou de 
+		Admin -->
+	<http auto-config='true'>
+		<intercept-url pattern="/pages/index.xhtml" access="ROLE_USER" />
+		<form-login login-page="/login.xhtml"
+			authentication-failure-url="/login.xhtml?erro=true" />
+	</http>
+
+	<!-- Definindo um user padão com acesso de Administrador -->
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="mcs.caf" password="123456" authorities="ROLE_ADMIN" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+	<!-- Localiza em banco de dados usuários e suas autorizações -->
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT login as username, password, enable FROM users WHERE login=?"
+				authorities-by-username-query="SELECT login as username, TRIM(authority) as authority FROM users WHERE login=?" />
+		</authentication-provider>
+	</authentication-manager>
+
+	<b:bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<b:property name="url" value="jdbc:postgresql:ajovepcampinas" />
+		<b:property name="driverClassName" value="org.postgresql.Driver" />
+		<b:property name="username" value="postgres" />
+		<b:property name="password" value="1662442" />
+	</b:bean>
+
+</b:beans>

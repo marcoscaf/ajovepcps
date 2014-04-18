@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<h:outputStylesheet name="login.css" library="css" />
+
+	<script>
+        jQuery(function($) {
+        	$('#login').submit(
+        			function() {
+        				var valid = true;
+        				var errormsg = 'This field is required!';
+        				var errorcn = 'error';
+
+        				$('.' + errorcn, this).remove();
+
+        				$('.required', this).each(
+        						function() {
+        							var parent = $(this).parent();
+        							if ($(this).val() == '') {
+        								var msg = $(this).attr('title');
+        								msg = (msg != '') ? msg : errormsg;
+        								$(
+        										'<span class = "' + errorcn + '">'
+        												+ msg + '</span>').appendTo(
+        										parent).fadeIn('fast').click(
+        										function() {
+        											$(this).remove();
+        										});
+        								valid = false;
+        							}
+        							;
+        						});
+        				return valid;
+        			});
+        });
+        </script>
+</h:head>
+<h:body>
+
+	<form id="login" action="j_spring_security_check" method="post">
+
+		<p:panel styleClass="loginContent">
+
+			<center class="loginContentForm">
+
+				<p:messages id="mensagens" showDetail="true" showSummary="false" />
+
+				<h:panelGrid columns="1">
+
+
+					<img class="profile-img" alt=""
+						src="resources/images/avatar_2x.png" />
+
+					<h:outputLabel for="j_username" value="Login: " />
+
+					<h:inputText id="j_username" required="true" class="field required"
+						title=" Digite seu Usuário " size="25" />
+
+
+
+					<h:outputLabel for="j_password" value="Senha: " />
+
+					<h:inputSecret id="j_password" required="true"
+						class="field required" title=" Digite sua Senha " size="25" />
+
+
+
+				</h:panelGrid>
+
+
+
+
+				<h:commandButton value="Entrar" styleClass="button" />
+				<p:panel rendered="#{param.erro}" showDetail="true"
+					showSummary="false" styleClass="noBorder">
+					<h:outputText styleClass="noBorder"
+						value="Usuário ou senha incorretos!" />
+				</p:panel>
+			</center>
+
+
+		</p:panel>
+
+
+
+
+	</form>
+
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+
