@@ -86,6 +86,7 @@ public class MemberBean {
 			// org.hibernate.PersistentObjectException: detached entity passed
 			// to persist:
 			if (member.getId() != null) {
+				member = member.clone();
 				member.setId(null);
 			}
 
