@@ -17,7 +17,8 @@ a:link {
 
 .content {
 	position: relative;
-	margin-left: 200px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .navMenu {
@@ -77,12 +78,27 @@ a:link {
 
 .formPadding {
 	padding-right: 15px !important;
+	margin-bottom: 5px;
 }
 
 .insertMemberBtn {
 	margin-bottom: 5px;
 	margin-right:10px !important;
 	color: #0088CC;
+	font-weight: bold;
+}
+
+.updateMemberBtn {
+	margin-bottom: 5px;
+	margin-right:10px !important;
+	color:#8B8B00;
+	font-weight: bold;
+}
+
+.removeMemberBtn {
+	margin-bottom: 5px;
+	margin-right:10px !important;
+	color: #FF3300;
 	font-weight: bold;
 }
 
@@ -94,6 +110,19 @@ a:link {
 
 .dataTableIcons:hover {
 	cursor: pointer;
+}
+
+.formAddress{
+	
+	margin-left: 30px;
+	margin-top: -138px;
+	
+}
+
+
+.divCommandButtons{
+	margin: 0 auto;
+	
 }
 
 /* Sobrescrição */

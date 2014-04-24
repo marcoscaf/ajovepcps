@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
-  <persistence-unit name="MyCompleteJPAWebAppPU" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="ajovepcps_PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
 <!--   Entidades  <class>br.com.mycompletejpawebapp.entity.Product</class>
     <class>br.com.mycompletejpawebapp.entity.Sell</class>
     <class>br.com.mycompletejpawebapp.entity.User</class>
     <class>br.com.mycompletejpawebapp.entity.Log</class> -->
+     <class>br.com.ajovepcps.entity.Member</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.dialect"                 value="org.hibernate.dialect.PostgreSQLDialect"/>

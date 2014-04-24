@@ -2,7 +2,7 @@ function clearField(idField) {
 	var inputs = document.getElementsByTagName("input");
 	var selects = document.getElementsByTagName("select");
 	var labels = document.getElementsByTagName("label");
-	/*var textAreas = document.getElementsByTagName("label");*/
+	/* var textAreas = document.getElementsByTagName("label"); */
 
 	for (var i = 0; i < inputs.length; i++) {
 		if (inputs[i].id.indexOf(idField) >= 0) {
@@ -32,7 +32,7 @@ function clearFields(elementId) {
 	var selects = element.getElementsByTagName("select");
 	var labels = document.getElementsByTagName("label");
 
-	/*var textAreas = document.getElementsByTagName("label");*/
+	/* var textAreas = document.getElementsByTagName("label"); */
 
 	for (var i = 0; i < inputs.length; i++) {
 
@@ -40,29 +40,38 @@ function clearFields(elementId) {
 			inputs[i].value = "";
 		}
 	}
-	
+
 	for (var i = 0; i < selects.length; i++) {
 
 		if (selects[i].id.indexOf('ipt') >= 0) {
 			selects[i].value = "";
 		}
 	}
-	
+
 	for (var i = 0; i < labels.length; i++) {
 
 		if (labels[i].id.indexOf('ipt') >= 0) {
 			labels[i].innerHTML = "...";
 		}
 	}
-	
+
 	closeMessPanelIfOpen();
 }
 
+function handleSubmitRequest(xhr, status, args) {
+	if(args.validationFailed == null){
+		closeMessPanelIfOpen();
+	}
+}
 
 function closeMessPanelIfOpen() {
+
 	try {
-		document.getElementById('templateForm:msgsForm').children[0].children[0]
-				.click();
+
+		setTimeout(
+				"document.getElementById('templateForm:globalMess').children[0].children[0].click()",
+				4000);
+
 	} catch (err) {
 
 	}
